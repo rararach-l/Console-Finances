@@ -11,7 +11,7 @@ The greatest increase in profits (date and amount) over the entire period
 The greatest decrease in losses (date and amount) over the entire period
 
 # Installation
-To use this program, you can view it via the console on [this page] (https://rararach-l.github.io/Console-Finances/)
+To use this program, you can view it via the console on [this page](https://rararach-l.github.io/Console-Finances/)
 
 # Usage
 To run the program, you will need to view it in the console, where the program will output the results of the financial analysis contained within the finance array. 

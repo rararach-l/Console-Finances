@@ -11,13 +11,13 @@ The greatest increase in profits (date and amount) over the entire period
 The greatest decrease in losses (date and amount) over the entire period
 
 # Installation
-To use this program, you will need to have a JavaScript runtime environment set up on your computer. It can be viewed in page console. 
+To use this program, you can view it via the console on [this page] (https://rararach-l.github.io/Console-Finances/)
 
 # Usage
-To run the program, you will need to view it in the console, where the program will output the results of the financial analysis. 
+To run the program, you will need to view it in the console, where the program will output the results of the financial analysis contained within the finance array. 
 
 # Credits
-This program was created by me, following a classes via trilogy eduction
+This program was created by following classes with trilogy eduction
 
 # License
 This program is released under the MIT License. See the LICENSE file for more information.

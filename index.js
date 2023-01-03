@@ -87,49 +87,44 @@ var finances = [
     ['Feb-2017', 671099]
 ];
 
-// declare empty variables
-let totalMonths = 0;
-let netTotal = 0;
-let changes = new Array(finances.length - 1); // constructor function to declare new array to store the change in profit/loss – one shorter than the finances array because we are looking at the change between
-let biggestIncrease = { date: '', amount: 0 }; // use object literal syntax to create object and assign values in a single staement
-let biggestDecrease = { date: '', amount: 0 };
-let totalChange = 0;
+let totalMonths = 0; // variable to store the total number of months
+let netTotal = 0; // variable to store the net total of the amounts
+let greatestIncrease = ['', 0]; // array to store the date and amount of the biggest increase in profits/losses
+let greatestDecrease = ['', 0]; // array to store the date and amount of the biggest decrease in profits/losses
+let totalChange = 0; // variable to store the total change in profits/losses month-to-month
 
-// Loop through each element in the finances array and extract date and amount using array destructuring
-for (let i = 0; i < finances.length; i++) {
-    let date = finances[i][0];
-    let amount = finances[i][1];
+for (let i = 0; i < finances.length; i++) { // loop through all elements in the 'finances' array
+  let date = finances[i][0]; // store the date of the current element in the 'date' variable
+  let amount = finances[i][1]; // store the amount of the current element in the 'amount' variable
 
-    // Increment the total number of months and add the current amount to the net total
-    totalMonths++; // equivalent to 'totalMonths = totalMonths + 1'
-    netTotal += amount; // this to 'netTotal = netTotal + amount'
+  totalMonths++; // increment the total number of months by 1
+  netTotal += amount; // add the current amount to the net total
 
-    // For loop to calculate change in profits/losses month-to-month. if the current element is not the first element in the array, calculate the change in profit/losses
-    if (i > 0) {
-        let change = amount - finances[i - 1][1];
-        changes[i - 1] = change;
-        totalChange += change;
+  // For loop to calculate change in profits/losses month-to-month. if the current element is not the first element in the array, calculate the change in profit/losses
+  if (i > 0) {
+    let change = amount - finances[i - 1][1]; // calculate the change in profits/losses from the current month to the previous month
+    totalChange += change; // add the change to the total change
 
-        // If the change is greater than the current highest change, update the highest change
-        if (change > biggestIncrease.amount) {
-            biggestIncrease.date = date;
-            biggestIncrease.amount = change;
-        }
-
-        // If the change is lower than the current lowest change, update the lowest change
-        if (change < biggestDecrease.amount) {
-            biggestDecrease.date = date;
-            biggestDecrease.amount = change;
-        }
+    // If the change is greater than the current highest change, update the highest change
+    if (change > greatestIncrease[1]) {
+      greatestIncrease[0] = date; // update the date of the biggest increase
+      greatestIncrease[1] = change; // update the amount of the biggest increase
     }
+
+    // If the change is lower than the current lowest change, update the lowest change
+    if (change < greatestDecrease[1]) {
+      greatestDecrease[0] = date; // update the date of the biggest decrease
+      greatestDecrease[1] = change; // update the amount of the biggest decrease
+    }
+  }
 }
 
-// Calculate the average change in profits/losses
-let averageChange = totalChange / changes.length;
+let averageChange = totalChange / (finances.length - 1); // calculate the average change in profits/losses month-to-month
 
-// Output the results
 console.log("Financial Analysis");
-console.log("Total months: " + totalMonths); // Outputs total number of months
-console.log("Average change: $" + averageChange.toFixed(2));  // Outputs average change in Profit/Loss
-console.log("Greatest increase in profits: " + biggestIncrease.date + " ($" + biggestIncrease.amount + ")"); // Outputs date and amount of greatest increase
-console.log("Greatest decrease in profits: " + biggestDecrease.date + " ($" + biggestDecrease.amount + ")"); // Outputs date and amount of greatest decrease
+console.log("----------------------------")
+console.log("Total months: " + totalMonths); // log the total number of months
+console.log("Total:" + "" + "$" + netTotal)
+console.log("Average change: $" + averageChange.toFixed(2)); // log the average change, formatted to two decimal places
+console.log("Greatest increase in profits: " + greatestIncrease[0] + " ($" + greatestIncrease[1] + ")"); // log the date and amount of the biggest increase in profits/losses
+console.log("Greatest decrease in profits: " + greatestDecrease[0] + " ($" + greatestDecrease[1] + ")"); // log the date and amount of the biggest decrease in profits/losses

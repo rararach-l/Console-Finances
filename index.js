@@ -129,8 +129,7 @@ let averageChange = totalChange / changes.length;
 
 // Output the results
 console.log("Financial Analysis");
-console.log("Total number of months: " + totalMonths); // Outputs total number of months
-console.log("Net total amount: $" + netTotal); // Outputs net total Profit/Losses
-console.log("Average change in profits: $" + averageChange.toFixed(2));  // Outputs average change in Profit/Loss
+console.log("Total months: " + totalMonths); // Outputs total number of months
+console.log("Average change: $" + averageChange.toFixed(2));  // Outputs average change in Profit/Loss
 console.log("Greatest increase in profits: " + biggestIncrease.date + " ($" + biggestIncrease.amount + ")"); // Outputs date and amount of greatest increase
-console.log("Greatest decrease in losses: " + biggestDecrease.date + " ($" + biggestDecrease.amount + ")"); // Outputs date and amount of greatest decrease
+console.log("Greatest decrease in profits: " + biggestDecrease.date + " ($" + biggestDecrease.amount + ")"); // Outputs date and amount of greatest decrease

@@ -129,7 +129,6 @@ let averageChange = totalChange / changes.length;
 
 // Output the results
 console.log("Financial Analysis");
-console.log("------------------------");
 console.log("Total number of months: " + totalMonths); // Outputs total number of months
 console.log("Net total amount: $" + netTotal); // Outputs net total Profit/Losses
 console.log("Average change in profits: $" + averageChange.toFixed(2));  // Outputs average change in Profit/Loss

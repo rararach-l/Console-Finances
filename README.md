@@ -1,5 +1,5 @@
 # Console-Finances – Financial Analysis
-A JavaScript program that analyzes financial records and calculates various metrics. It can be viewed here: https://rararach-l.github.io/Console-Finances/
+A JavaScript program that analyzes financial records and calculates various metrics. It can be viewed via this link: https://rararach-l.github.io/Console-Finances/
 
 # Description
 Given a dataset of financial records in the form of an array of arrays, this program calculates the following metrics using for loops:
